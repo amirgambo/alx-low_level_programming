@@ -1,13 +1,13 @@
-#include <stdio.h>
+#include<stdio.h>
+
 /**
- * main- the program's main entry point
+ * main- the main entry gateway to the program
  *
- * Description: using the main function
- * the program outputs "Programming is like building a multilingual puzzle"
- * return: zero if there is no error and non-zero otherwise
+ * Return: Always 0(Successful)
  */
 int main(void)
 {
-	puts("\"Programming is like building a multilingual puzzle");
+	puts("\"Programming is like building a multilingual puzzle\n");
 	return (0);
 }
+
