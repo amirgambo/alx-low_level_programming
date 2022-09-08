@@ -1,10 +1,10 @@
 #include <stdio.h>
 /**
- *main -print the string in the put function
+ * main- the program's main entry point
  *
  * Description: using the main function
  * the program outputs "Programming is like building a multilingual puzzle"
- * return: 0
+ * return: zero if there is no error and non-zero otherwise
  */
 int main(void)
 {
