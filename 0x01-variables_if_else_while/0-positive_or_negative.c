@@ -5,7 +5,7 @@
 /**
 *main-program entry point
 *
-*Description:prints whether whether a number stored is positive, zero or negative
+*Description:prints whether a number stored is positive,zero or negative
 *Return:0
 */
 int main(void)
