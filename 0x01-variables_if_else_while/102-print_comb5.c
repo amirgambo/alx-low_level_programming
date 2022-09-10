@@ -18,7 +18,7 @@ int main(void)
 			{
 				for (j = 48; j <= 57; j++)
 				{
-					if (((t + j) > (c + i) && t >= c) ||c < t)
+					if (((t + j) > (c + i) && t >= c) || c < t)
 					{
 						putchar(c);
 						putchar(i);
@@ -26,7 +26,7 @@ int main(void)
 						putchar(t);
 						putchar(j);
 
-						if ((c + i + t + j == 227) && (c == 57))
+						if ((c + i + t + j == 227) & (c == 57))
 						{
 							break;
 						}
