@@ -5,7 +5,8 @@
  *
  * Description:prints all possible different combinations of two digits
  * Return:0
- */int main(void)
+ */
+int main(void)
 {
 	int c, i;
 
@@ -28,5 +29,4 @@
 	}
 	putchar('\n');
 	return (0);
-}
-		
+}		
