@@ -8,39 +8,32 @@
  */
 int main(void)
 {
-	int c, i, t, j;
+	int i = 0, j;
 
-	for (c = 48; c <= 57; c++)
+	while (i <= 99)
 	{
-		for (i = 48; i <= 57; i++)
-		{
-			for (t = 48; t <= 57; t++)
-			{
-				for (j = 48; j <= 57; j++)
-				{
-					if (((t + j) > (c + i) && t >= c) || c < t)
-					{
-						putchar(c);
-						putchar(i);
-						putchar(' ');
-						putchar(t);
-						putchar(j);
+		j = i;
 
-						if (((c + i + t + j) == 227) & (c == 57))
-						{
-							break;
-						}
-						else
-						{
-							putchar(',');
-							putchar(' ');
-						}
-					}
+		while (j <= 99)
+		{
+			if (j != i)
+			{
+				putchar((i / 10) + 48);
+				putchar((i % 10) + 48);
+				putchar(' ');
+				putchar((j / 10) + 48);
+				putchar((j % 10) + 48);
+
+				if (i != 98 || j != 98)
+				{
+					putchar(' , ');
+					putchar(' ');
 				}
 			}
+			++j;
 		}
+		++i;
 	}
 	putchar('\n');
-
 	return (0);
-}
+}	
