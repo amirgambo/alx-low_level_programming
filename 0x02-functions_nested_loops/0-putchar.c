@@ -4,7 +4,7 @@
  * main- program main entry point.
  *
  * Description:prints _putchar.
- * Return 0 as always for success.
+ * Return: 0 as always for success.
  */
 int main(void)
 {
