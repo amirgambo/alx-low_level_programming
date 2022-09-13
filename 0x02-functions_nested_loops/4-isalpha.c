@@ -5,9 +5,10 @@
  *
  * Return : i if true and 0 otherwise.
  */
+
 int _isalpha(int c)
 {
-	if(c >= 'a' && c <= 'z')
+	if (c >= 'a' && c <= 'z')
 	{
 		return (1);
 	}
