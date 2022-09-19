@@ -1,7 +1,7 @@
 #include "main.h"
 #include<string.h>
 
-void _putchar(str[z]);
+void _putchar(char *str);
 
 /**
 * puts_half- prints half of a string
