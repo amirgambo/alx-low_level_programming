@@ -1,8 +1,6 @@
 #include "main.h"
 #include<string.h>
 
-void _putchar(char *str);
-
 /**
 * puts_half- prints half of a string
 * @str:string to be printed
