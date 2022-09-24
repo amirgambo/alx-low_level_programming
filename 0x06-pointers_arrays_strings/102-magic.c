@@ -1,5 +1,11 @@
 #include <stdio.h>
 
+/**
+* main- program entry point
+*
+* Return: return 0 for success
+*/
+
 int main(void)
 {
 	int n;
