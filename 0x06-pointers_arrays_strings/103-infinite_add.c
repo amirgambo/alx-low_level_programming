@@ -1,13 +1,19 @@
 #include "main.h"
 
 /**
-* infinite_add - function that adds two numbers.
-* the function will use buffer to store the result
-* @n1: first number to be added
-* @n2: second number to be added
-* @r: stores the result
-* @size_r: size of buffer
-* Return: returns a pointer as result
+* infinite_add - C function that adds two numbers stored
+* in strings to a buffer.
+* Assumes that strings are never empty and
+* that numbers will always be positive, or 0.
+* Assumes there are only digits stored in the number strings.
+* if result can be stored in the buffer,
+* returns a pointer to the result.
+* if result cannot be stored in the buffer, returns '0'.
+* @n1: first number to be added.
+* @n2: second number to be added.
+* @r: store result.
+* @size_r: size of buffer.
+* Return: returns pointer to result.
 */
 
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
@@ -15,14 +21,14 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 }
 
 /**
-* add_strings - adds the numbers stored in two strings.
-* @n1: the string containing the first number to be added.
-* @n2: the string containing the second number to be added.
-* @r: the buffer to store the result.
-* @r_index: the current index of the buffer.
+* add_strings - Adds the numbers stored in two strings.
+* @n1: The string containing the first number to be added.
+* @n2: The string containing the second number to be added.
+* @r: The buffer to store the result.
+* @r_index: The current index of the buffer.
 *
 * Return: if r can store the sum - a pointer to the result.
-*        if r cannot store the sum - 0.
+*         if r cannot store the sum - 0.
 */
 
 char *add_strings(char *n1, char *n2, char *r, int r_index)
@@ -51,4 +57,3 @@ char *add_strings(char *n1, char *n2, char *r, int r_index)
 		tens = num / 10;
 	}
 }
-
