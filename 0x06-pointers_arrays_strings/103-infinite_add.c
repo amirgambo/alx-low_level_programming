@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
-* function that adds two numbers.
+* infinite_add - function that adds two numbers.
 * the function will use buffer to store the result
 * @n1: first number to be added
 * @n2: second number to be added
 * @r: stores the result
-* @size_r size of buffer
+* @size_r: size of buffer
 * Return: returns a pointer as result
 */
 
@@ -48,7 +48,7 @@ char *add_strings(char *n1, char *n2, char *r, int r_index)
 	{
 		num = (*n2 - '0') + tens;
 		*(r + r_index) = (num % 10) + '0';
-		tens = num /10;
+		tens = num / 10;
 	}
 }
 
