@@ -1,5 +1,5 @@
 /**
- * _memcpy - copies n bytes from source memory to destination
+ * _memcpy - copies a memory area
  *
  * @dest: destination to write to
  * @src: source to copy from
@@ -9,10 +9,12 @@
 
 char *_memcpy(char *dest, char *src, int n)
 {
-	char *ptr = dest;
+	unsigned int i = 0;
 
-	while (n--)
-		*ptr++ = *src++;
+	for (; i < n; i++)
+	{
+		dest[i] = src[i];
+	}
 
-	return (dest);
+	return (dest);
 }
