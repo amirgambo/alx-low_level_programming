@@ -1,20 +1,19 @@
-/** 
-  * _strchr - locates a character in a string 
-  * 
-  * @s: string to search 
-  * @c: character to search for 
-  * 
-  * Return: pointer to first occurence of c in s 
-  */ 
- char *_strchr(char *s, char c) 
- { 
-         while (*s != 0) 
-         { 
-                 if (*s == c) 
-                         return (s); 
-                 s++; 
-         } 
-         if (*s == c) 
-                 return (s); 
-         return (0); 
- }
+/**
+* _memcpy - copies n bytes from source memory to destination
+*
+* @dest: destination to write to
+* @src: source to copy from
+* @n: number of bytes to write
+*
+* Return: pointer to dest
+*/
+
+char *_memcpy(char *dest, char *src, int n)
+{
+	char *ptr = dest;
+
+	while (n--)
+		*ptr++ = *src++;
+
+	return (dest);
+}
