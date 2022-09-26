@@ -1,16 +1,12 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-/** 
- * File: holberton.h 
- * Auth: Brennan D Baraban 
- * Desc: Header file containing prototypes for all
- *functions used in the 0x06-pointers_arrays_strings directory. 
- */
+/**
+* void prototypes()
+* int prototypes()
+*/
 
-#include <stddef.h>
-
-int _putchar(char c);
+int _putchar(char);
 char *_memset(char *s, char b, unsigned int n);
 char *_memcpy(char *dest, char *src, unsigned int n);
 char *_strchr(char *s, char c);
@@ -21,4 +17,4 @@ void print_chessboard(char (*a)[8]);
 void print_diagsums(int *a, int size);
 void set_string(char **s, char *to);
 
-#endif 
+#endif /*MAIN_H*/
