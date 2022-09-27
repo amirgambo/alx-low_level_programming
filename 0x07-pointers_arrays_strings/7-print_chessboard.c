@@ -6,7 +6,7 @@
  * @a: input pointer
  *
  * Return: return nothing
-*/
+ */
 
 void print_chessboard(char (*a)[8])
 {
@@ -14,6 +14,7 @@ void print_chessboard(char (*a)[8])
 
 	i = 0;
 	j = 0;
+
 	while (i < 64)
 	{
 		if (i % 8 == 0 && i != 0)
