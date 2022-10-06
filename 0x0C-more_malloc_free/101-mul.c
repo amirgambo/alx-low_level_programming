@@ -8,7 +8,6 @@
 *@num: string to check
 *Return: 1 is numm, 0 not num
 */
-
 int _isNum(char *num)
 {
 	int i;
@@ -22,13 +21,12 @@ int _isNum(char *num)
 }
 
 /**
-* *_memset - copies a character to the firstn characters of the string pointed
+* *_memset - copies a character to the first characters of string pointed
 *@s: original string
 *@b: value to remplace
 *@n: number of bytes
 *Return: s (string modify)
 */
-
 char *_memset(char *s, char b, unsigned int n)
 {
 	unsigned int i;
@@ -43,12 +41,11 @@ char *_memset(char *s, char b, unsigned int n)
 *@s: poiter of character
 *Return: the length of a string
 */
-
 int _strlen(char *s)
 {
 	int len;
-	len = 0;
 
+	len = 0;
 	while (*(s + len) != '\0')
 		len++;
 	return (len);
@@ -60,7 +57,6 @@ int _strlen(char *s)
 *@argv: number to multiply
 *Return: 0 (success)
 */
-
 int main(int argc, char *argv[])
 {
 	int length, c, prod, i, j, l1, l2;
@@ -68,7 +64,6 @@ int main(int argc, char *argv[])
 
 	if ((argc != 3 || !(_isNum(argv[1]))) || !(_isNum(argv[2])))
 		puts("Error"), exit(98);
-
 	l1 = _strlen(argv[1]), l2 = _strlen(argv[2]);
 	length = l1 + l2;
 	res = calloc(length, sizeof(int *));
