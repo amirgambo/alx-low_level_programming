@@ -1,47 +1,68 @@
 #include "main.h"
+#include <stdio.h>
 #include <stdlib.h>
 
 /**
- * *_realloc - reallocates a memory block using malloc and free.
- * @ptr: pointer to previously allocated memory
- * @old_size: size of allocated space for ptr
- * @new_size: size of newly allocated space
- *
- * Return: pointer to newly allocated memory, or NULL if failure
- */
+* *_memcpy - copies memory area
+*@dest: destination to copy
+*@src: source pointer
+*@n: number of bytes to coppy
+*Return: dest (destination)
+*/
+char *_memcpy(char *dest, char *src, unsigned int n)
+{
+	unsigned int i;
 
+	for (i = 0; i < n; i++)
+	{
+		dest[i] = src[i];
+	}
+	return (dest);
+}
+
+/**
+* *_realloc - reallocate a memory block using malloc and free
+*@ptr: ponter to realloc
+*@old_size: old size of the memory
+*@new_size: new size of the memory
+*Return: pointer reallocared or NULL
+*/
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	char *p;
-	unsigned int i, max = new_size;
-	char *oldp = ptr;
+	void *rp;
 
 	if (ptr == NULL)
 	{
-		p = malloc(new_size);
-		return (p);
+		rp = malloc(new_size);
+		if (rp == NULL)
+		{
+			free(ptr);
+			return (NULL);
+		}
+		free(ptr);
+		return (rp);
 	}
-	else if (new_size == 0)
+
+	if (new_size == old_size)
+		return (ptr);
+
+	if (new_size == 0 && ptr != NULL)
 	{
 		free(ptr);
 		return (NULL);
 	}
-	else if (new_size == old_size)
-		return (ptr);
 
-	p = malloc(new_size);
+	rp = malloc(new_size);
 
-	if (p == NULL)
+	if (rp == NULL)
+	{
+		free(ptr);
 		return (NULL);
-	
-	if (new_size > old_size)
-		max = old_size;
-	
-	for (i = 0; i < max; i++)
-		p[i] = oldp[i];
+	}
 
-	p[i+1] = '\0';
+	if (new_size > old_size)
+		_memcpy(rp, ptr, old_size);
 	free(ptr);
 
-	return (p);
+	return (rp);
 }
