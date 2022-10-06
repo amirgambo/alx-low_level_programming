@@ -1,91 +1,104 @@
 #include "main.h"
-#include <string.h>
-#include<stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /**
- * _puts - prints a string, followed by a new line,
- * @str: pointer to the string to print
- * Return: void
+* _isNum - check if is a number
+*@num: string to check
+*Return: 1 is numm, 0 not num
 */
 
-void _puts(char *str)
+int _isNum(char *num)
 {
-	int i = 0;
+	int i;
 
-	while (str[i])
+	for (i = 0; num[i] != '\0'; i++)
 	{
-		_putchar(str[i]);
-		i++;
+		if (num[i] < '0' || num[i] > '9')
+			return (0);
 	}
+	return (1);
 }
 
 /**
- * _atoi - convert a string to an integer.
- * @s: char type string
- * Return: integer converted
- */
+* *_memset - copies a character to the firstn characters of the string pointed
+*@s: original string
+*@b: value to remplace
+*@n: number of bytes
+*Return: s (string modify)
+*/
 
-int _atoi(const char *s)
+char *_memset(char *s, char b, unsigned int n)
 {
-	int sign = 1;
-	unsigned long int resp = 0, firstNum, i;
+	unsigned int i;
 
-	for (firstNum = 0; !(s[firstNum] >= 48 && s[firstNum] <= 57); firstNum++)
+	for (i = 0; i < n; i++)
+		s[i] = b;
+	return (s);
+}
+
+/**
+* _strlen - returns the lenght of a string
+*@s: poiter of character
+*Return: the length of a string
+*/
+
+int _strlen(char *s)
+{
+	int len;
+	len = 0;
+
+	while (*(s + len) != '\0')
+		len++;
+	return (len);
+}
+
+/**
+* main - multiple 2 positive numbers
+*@argc: argument counter
+*@argv: number to multiply
+*Return: 0 (success)
+*/
+
+int main(int argc, char *argv[])
+{
+	int length, c, prod, i, j, l1, l2;
+	int *res;
+
+	if ((argc != 3 || !(_isNum(argv[1]))) || !(_isNum(argv[2])))
+		puts("Error"), exit(98);
+
+	l1 = _strlen(argv[1]), l2 = _strlen(argv[2]);
+	length = l1 + l2;
+	res = calloc(length, sizeof(int *));
+	if (res == NULL)
+		puts("Error"), exit(98);
+	for (i = l2 - 1; i > -1; i--)
 	{
-		if (s[firstNum] == '-')
+		c = 0;
+		for (j = l1; j > -1; j--)
 		{
-			sign *= -1;
+			prod = (argv[2][i] - '0') * (argv[1][j] - '0');
+			c = (prod / 10);
+			res[(i + j) + 1] += (prod % 10);
+			if (res[(i + j) + 1] > 9)
+			{
+				res[i + j] += res[(i + j) + 1] / 10;
+				res[(i + j) + 1] = res[(i + j) + 1] % 10;
+			}
+			res[(i + j) + 1] += c;
 		}
 	}
 
-	for (i = firstNum; s[i] >= 48 && s[i] <= 57; i++)
-	{
-		resp *= 10;
-		resp += (s[i] - 48);
-	}
+	if (res[0] == 0)
+		i = 1;
+	else
+		i = 0;
+	for (; i < length; i++)
+		printf("%d", res[i]);
 
-	return (sign * resp);
-}
-
-/**
- * print_int - prints an integer.
- * @n: int
- * Return: 0
- */
-
-void print_int(unsigned long int n)
-{
-	unsigned  long int divisor = 1, i, resp;
-	
-	for (i = 0; n / divisor > 9; i++, divisor *= 10)
-		;
-
-	for (; divisor >= 1; n %= divisor, divisor /= 10)
-	{
-		resp = n / divisor;
-		_putchar('0' + resp);
-	}
-}
-
-/**
- * main - print the result of the multiplication, followed by a new line
- * @argc: int
- * @argv: list
- * Return: 0
- */
-
-int main(int argc, char const *argv[])
-{
-	(void)argc;
-
-	if (argc != 3)
-	{
-		_puts("Error ");
-		exit(98);
-	}
-	print_int(_atoi(argv[1]) * _atoi(argv[2]));
-	_putchar('\n');
-
+	printf("\n");
+	free(res);
 	return (0);
 }
