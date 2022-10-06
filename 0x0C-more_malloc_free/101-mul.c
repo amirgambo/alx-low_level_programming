@@ -1,4 +1,4 @@
-#include "main.h"
+#include "holberton.h"
 
 /**
  * _puts - prints a string, followed by a new line,
@@ -54,7 +54,7 @@ int _atoi(const char *s)
 void print_int(unsigned long int n)
 {
 	unsigned  long int divisor = 1, i, resp;
-
+	
 	for (i = 0; n / divisor > 9; i++, divisor *= 10)
 		;
 
