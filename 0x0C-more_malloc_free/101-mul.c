@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
 /**
 * _isNum - check if is a number
 * @num: string to check
@@ -16,6 +17,7 @@ int _isNum(char *num)
 		if (num[i] < '0' || num[i] > '9')
 			return (0);
 	}
+
 	return (1);
 }
 
