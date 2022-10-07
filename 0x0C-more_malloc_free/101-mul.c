@@ -224,7 +224,6 @@ int main(int argc, char *argv[])
 			putchar(final_prod[index]);
 	}
 	putchar('\n');
-
 	free(next_prod);
 	free(final_prod);
 
