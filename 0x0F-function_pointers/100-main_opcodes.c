@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+
 /**
 * main - number of bytes
 *@argc: argument counter
 *@argv: argument vector
 *Return: 0
-**/
-
+*/
 int main(int argc, char *argv[])
 {
 	int byte;
