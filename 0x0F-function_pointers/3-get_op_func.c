@@ -3,10 +3,12 @@
 
 /**
  * get_op_func - Selects the correct function to perform
- * @s: The operator passed as argument
+ *               the operation asked by the user.
+ * @s: The operator passed as argument.
+ *
  * Return: A pointer to the function corresponding
+ *         to the operator given as a parameter.
  */
-
 int (*get_op_func(char *s))(int, int)
 {
 	op_t ops[] = {
