@@ -2,12 +2,14 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+
 /**
 * main - program that calculates 2 numbers
-*@argc: argument counter
-*@argv: argument vector that brings the values
-*Return: 0, 98 argc error, 99 on illegal operator, 100 div/mod by zero
+* @argc: argument counter
+* @argv: argument vector that brings the values
+* Return: 0, 98 argc error, 99 on illegal operator, 100 div/mod by zero.
 */
+
 int main(int argc, char *argv[])
 {
 	int result;
