@@ -1,6 +1,6 @@
-#include <stdlib.h>
-#include <stdio.h> 
+#include <stdlib.h> 
 #include <stdarg.h>
+#include<stdio.h>
 /**
 * print_strings - Function that prints strings followed by new line
 * @separator: is the string to be printed between the strings
