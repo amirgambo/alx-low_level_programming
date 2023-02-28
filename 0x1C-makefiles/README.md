@@ -1,7 +1,5 @@
 0x1C. C - Makefiles
 
-https://github.com/sammykingx/alx-low_level_programming/blob/master/0x1C-makefiles/README.md#c---makefiles
-
 MANDATORY TASKS
 0. make -f 0-Makefile 
 
