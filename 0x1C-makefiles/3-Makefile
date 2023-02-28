@@ -2,12 +2,12 @@
 
 # Setting variables
 CC = gcc
-SRC = main.c holberton.c
-NAME = holberton
+SRC = main.c school.c
+NAME = school
 OBJ = $(SRC:.c=.o) # Substitution References
 RM = rm -f
 
-# Rule all: Build the holberton executable file
+# Rule all: Build the school executable file
 # 1. Implicity rule to updating .o files
 # 2. Then compile with .o files and executable
 all: $(OBJ)
